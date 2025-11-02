@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Discord Channel ID Finder</title>
+    <style>
+        :root {
+            --discord-blurple: #5865F2;
+            --discord-dark: #2C2F33;
+            --discord-darker: #23272A;
+            --discord-light: #FFFFFF;
+            --discord-gray: #99AAB5;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        body {
+            background-color: var(--discord-darker);
+            color: var(--discord-light);
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--discord-dark);
+            padding: 1.5rem;
+            text-align: center;
+            border-bottom: 2px solid var(--discord-blurple);
+        }
+        
+        h1 {
+            color: var(--discord-light);
+            margin-bottom: 0.5rem;
+        }
+        
+        .subtitle {
+            color: var(--discord-gray);
+            font-size: 1.1rem;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 2rem;
+        }
+        
+        .card {
+            background-color: var(--discord-dark);
+            border-radius: 8px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        
+        h2 {
+            color: var(--discord-blurple);
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+        }
+        
+        h2 i {
+            margin-right: 10px;
+        }
+        
+        .step {
+            margin-bottom: 1.5rem;
+            padding-bottom: 1.5rem;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .step:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+            padding-bottom: 0;
+        }
+        
+        .step-number {
+            display: inline-block;
+            background-color: var(--discord-blurple);
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            text-align: center;
+            line-height: 30px;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+        
+        .step-title {
+            display: inline-block;
+            font-weight: bold;
+            font-size: 1.2rem;
+        }
+        
+        .step-content {
+            margin-top: 1rem;
+            padding-left: 40px;
+        }
+        
+        .image-placeholder {
+            background-color: var(--discord-darker);
+            border-radius: 8px;
+            padding: 2rem;
+            text-align: center;
+            margin: 1rem 0;
+            color: var(--discord-gray);
+            border: 1px dashed var(--discord-gray);
+        }
+        
+        .note {
+            background-color: rgba(88, 101, 242, 0.1);
+            border-left: 4px solid var(--discord-blurple);
+            padding: 1rem;
+            margin: 1rem 0;
+            border-radius: 0 4px 4px 0;
+        }
+        
+        .code {
+            background-color: var(--discord-darker);
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            font-family: monospace;
+            margin: 0.5rem 0;
+            display: inline-block;
+        }
+        
+        footer {
+            text-align: center;
+            padding: 2rem;
+            color: var(--discord-gray);
+            font-size: 0.9rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 1rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .step-content {
+                padding-left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Discord Channel ID Finder</h1>
+        <p class="subtitle">Learn how to find Channel IDs on Discord Desktop and Mobile</p>
+    </header>
+    
+    <div class="container">
+        <div class="card">
+            <h2><i>📱</i> Finding Channel ID on Desktop</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">Enable Developer Mode</span>
+                <div class="step-content">
+                    <p>First, you need to enable Developer Mode in your Discord settings:</p>
+                    <ul>
+                        <li>Open Discord and go to <span class="code">User Settings</span> (the gear icon)</li>
+                        <li>Navigate to <span class="code">Advanced</span> in the left sidebar</li>
+                        <li>Toggle on <span class="code">Developer Mode</span></li>
+                    </ul>
+                    <div class="image-placeholder">
+                        [Screenshot: Discord settings showing Developer Mode toggle]
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">Copy Channel ID</span>
+                <div class="step-content">
+                    <p>Once Developer Mode is enabled:</p>
+                    <ul>
+                        <li>Navigate to the channel whose ID you want to find</li>
+                        <li>Right-click on the channel name in the channel list</li>
+                        <li>Select <span class="code">Copy ID</span> from the context menu</li>
+                    </ul>
+                    <div class="image-placeholder">
+                        [Screenshot: Right-click menu on a channel showing "Copy ID" option]
+                    </div>
+                    <div class="note">
+                        <strong>Note:</strong> The Channel ID is now copied to your clipboard and can be pasted anywhere you need it.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><i>📱</i> Finding Channel ID on Mobile</h2>
+            
+            <div class="step">
+                <span class="step-number">1</span>
+                <span class="step-title">Enable Developer Mode</span>
+                <div class="step-content">
+                    <p>First, enable Developer Mode in the Discord mobile app:</p>
+                    <ul>
+                        <li>Tap your profile picture in the bottom right</li>
+                        <li>Scroll down and tap <span class="code">Behavior</span> under App Settings</li>
+                        <li>Toggle on <span class="code">Developer Mode</span></li>
+                    </ul>
+                    <div class="image-placeholder">
+                        [Screenshot: Discord mobile settings showing Developer Mode toggle]
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <span class="step-number">2</span>
+                <span class="step-title">Copy Channel ID</span>
+                <div class="step-content">
+                    <p>Once Developer Mode is enabled:</p>
+                    <ul>
+                        <li>Navigate to the channel whose ID you want to find</li>
+                        <li>Tap and hold on the channel name in the channel list</li>
+                        <li>Select <span class="code">Copy ID</span> from the menu that appears</li>
+                    </ul>
+                    <div class="image-placeholder">
+                        [Screenshot: Long-press menu on a channel showing "Copy ID" option]
+                    </div>
+                    <div class="note">
+                        <strong>Note:</strong> The Channel ID is now copied to your clipboard and can be pasted anywhere you need it.
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card">
+            <h2><i>💡</i> What are Channel IDs used for?</h2>
+            <p>Channel IDs are unique identifiers for Discord channels. They're commonly used for:</p>
+            <ul>
+                <li>Bot development and automation</li>
+                <li>Creating channel mentions in messages</li>
+                <li>API integrations and webhooks</li>
+                <li>Troubleshooting and support requests</li>
+            </ul>
+            <div class="note">
+                <strong>Remember:</strong> Channel IDs are different from User IDs and Server IDs. Make sure you're copying the correct ID for your needs.
+            </div>
+        </div>
+    </div>
+    
+    <footer>
+        <p>This guide is based on Discord's official documentation</p>
+        <p>Discord is a trademark of Discord Inc. This site is not officially affiliated with Discord.</p>
+    </footer>
+</body>
+</html>
