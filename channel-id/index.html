@@ -3,14 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Discord Channel ID Finder</title>
+    <title>How to Find Your Channel ID | Discord</title>
     <style>
         :root {
             --discord-blurple: #5865F2;
+            --discord-green: #57F287;
             --discord-dark: #2C2F33;
             --discord-darker: #23272A;
             --discord-light: #FFFFFF;
             --discord-gray: #99AAB5;
+            --discord-light-gray: #f9f9f9;
+            --discord-border: #e0e0e0;
         }
         
         * {
@@ -21,242 +24,513 @@
         }
         
         body {
-            background-color: var(--discord-darker);
-            color: var(--discord-light);
+            background-color: var(--discord-light);
+            color: #333;
             line-height: 1.6;
         }
         
         header {
-            background-color: var(--discord-dark);
-            padding: 1.5rem;
-            text-align: center;
-            border-bottom: 2px solid var(--discord-blurple);
+            background-color: var(--discord-light);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--discord-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
         
-        h1 {
-            color: var(--discord-light);
-            margin-bottom: 0.5rem;
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--discord-blurple);
         }
         
-        .subtitle {
-            color: var(--discord-gray);
-            font-size: 1.1rem;
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--discord-blurple);
         }
         
         .container {
-            max-width: 1000px;
+            max-width: 1200px;
             margin: 0 auto;
             padding: 2rem;
+            display: flex;
         }
         
-        .card {
-            background-color: var(--discord-dark);
-            border-radius: 8px;
-            padding: 2rem;
-            margin-bottom: 2rem;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        .sidebar {
+            width: 250px;
+            margin-right: 2rem;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 0.5rem 0;
+        }
+        
+        .sidebar a:hover {
+            color: var(--discord-blurple);
+        }
+        
+        .main-content {
+            flex: 1;
+            max-width: 800px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
         }
         
         h2 {
-            color: var(--discord-blurple);
+            color: #333;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--discord-border);
+        }
+        
+        h3 {
+            color: #333;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        p {
             margin-bottom: 1rem;
+        }
+        
+        .step {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--discord-light-gray);
+            border-radius: 8px;
+            border-left: 4px solid var(--discord-blurple);
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 0.5rem;
             display: flex;
             align-items: center;
         }
         
-        h2 i {
-            margin-right: 10px;
-        }
-        
-        .step {
-            margin-bottom: 1.5rem;
-            padding-bottom: 1.5rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-        }
-        
-        .step:last-child {
-            border-bottom: none;
-            margin-bottom: 0;
-            padding-bottom: 0;
-        }
-        
         .step-number {
-            display: inline-block;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
             background-color: var(--discord-blurple);
             color: white;
-            width: 30px;
-            height: 30px;
             border-radius: 50%;
-            text-align: center;
-            line-height: 30px;
             margin-right: 10px;
-            font-weight: bold;
-        }
-        
-        .step-title {
-            display: inline-block;
-            font-weight: bold;
-            font-size: 1.2rem;
+            font-size: 0.9rem;
         }
         
         .step-content {
-            margin-top: 1rem;
-            padding-left: 40px;
+            margin-left: 34px;
         }
         
-        .image-placeholder {
-            background-color: var(--discord-darker);
-            border-radius: 8px;
-            padding: 2rem;
-            text-align: center;
+        .image-container {
             margin: 1rem 0;
-            color: var(--discord-gray);
-            border: 1px dashed var(--discord-gray);
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border: 1px solid var(--discord-border);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
         }
         
         .note {
-            background-color: rgba(88, 101, 242, 0.1);
-            border-left: 4px solid var(--discord-blurple);
+            background-color: rgba(88, 101, 242, 0.05);
+            border: 1px solid rgba(88, 101, 242, 0.2);
+            border-radius: 4px;
             padding: 1rem;
             margin: 1rem 0;
-            border-radius: 0 4px 4px 0;
         }
         
-        .code {
-            background-color: var(--discord-darker);
-            padding: 0.5rem 1rem;
-            border-radius: 4px;
-            font-family: monospace;
-            margin: 0.5rem 0;
+        .note-title {
+            font-weight: 600;
+            color: var(--discord-blurple);
+            margin-bottom: 0.5rem;
+        }
+        
+        .platform-tabs {
+            display: flex;
+            margin-bottom: 1rem;
+            border-bottom: 1px solid var(--discord-border);
+        }
+        
+        .tab {
+            padding: 0.75rem 1.5rem;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+        }
+        
+        .tab.active {
+            border-bottom: 3px solid var(--discord-blurple);
+            font-weight: 600;
+        }
+        
+        .tab-content {
+            display: none;
+        }
+        
+        .tab-content.active {
+            display: block;
+        }
+        
+        .icon {
             display: inline-block;
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+            vertical-align: middle;
+        }
+        
+        .cogwheel {
+            background-color: #666;
+            border-radius: 50%;
+            position: relative;
+        }
+        
+        .cogwheel:before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: 
+                radial-gradient(circle at center, transparent 30%, #666 30%, #666 35%, transparent 35%),
+                repeating-conic-gradient(from 0deg, #666 0deg 15deg, transparent 15deg 30deg);
+            border-radius: 50%;
+        }
+        
+        .checkmark {
+            color: var(--discord-green);
+            font-weight: bold;
+        }
+        
+        .x-mark {
+            color: #ff5c5c;
+            font-weight: bold;
         }
         
         footer {
-            text-align: center;
+            background-color: var(--discord-light-gray);
             padding: 2rem;
-            color: var(--discord-gray);
+            text-align: center;
+            border-top: 1px solid var(--discord-border);
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #666;
+        }
+        
+        .footer-links a:hover {
+            color: var(--discord-blurple);
+        }
+        
+        .copyright {
+            color: #999;
             font-size: 0.9rem;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
         }
         
         @media (max-width: 768px) {
             .container {
+                flex-direction: column;
                 padding: 1rem;
             }
             
-            .card {
-                padding: 1.5rem;
+            .sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 2rem;
             }
             
-            .step-content {
-                padding-left: 0;
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
             }
         }
     </style>
 </head>
 <body>
     <header>
-        <h1>Discord Channel ID Finder</h1>
-        <p class="subtitle">Learn how to find Channel IDs on Discord Desktop and Mobile</p>
+        <div class="logo">Discord Support</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Articles</a></li>
+                <li><a href="#">Community</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
     </header>
     
     <div class="container">
-        <div class="card">
-            <h2><i>📱</i> Finding Channel ID on Desktop</h2>
+        <aside class="sidebar">
+            <h3>In this article</h3>
+            <ul>
+                <li><a href="#enable-dev-mode">How to Enable Developer Mode</a></li>
+                <li><a href="#desktop">Finding Channel ID on Desktop</a></li>
+                <li><a href="#mobile">Finding Channel ID on Mobile</a></li>
+            </ul>
             
-            <div class="step">
-                <span class="step-number">1</span>
-                <span class="step-title">Enable Developer Mode</span>
-                <div class="step-content">
-                    <p>First, you need to enable Developer Mode in your Discord settings:</p>
-                    <ul>
-                        <li>Open Discord and go to <span class="code">User Settings</span> (the gear icon)</li>
-                        <li>Navigate to <span class="code">Advanced</span> in the left sidebar</li>
-                        <li>Toggle on <span class="code">Developer Mode</span></li>
-                    </ul>
-                    <div class="image-placeholder">
-                        [Screenshot: Discord settings showing Developer Mode toggle]
+            <h3>Related articles</h3>
+            <ul>
+                <li><a href="#">Where can I find my User ID?</a></li>
+                <li><a href="#">Where can I find my Server ID?</a></li>
+                <li><a href="#">Where can I find my Message ID?</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <h1>Where can I find my Channel ID?</h1>
+            
+            <p>To find a Channel ID, you'll first need to enable Developer Mode in your Discord settings. Once enabled, you can copy the ID directly from the channel.</p>
+            
+            <h2 id="enable-dev-mode">How to Enable Developer Mode</h2>
+            <p>In order to be able to copy an ID number, you need to have Developer Mode enabled. Here's how.</p>
+            
+            <div class="platform-tabs">
+                <div class="tab active" data-tab="desktop-dev">Desktop</div>
+                <div class="tab" data-tab="mobile-dev">Mobile</div>
+            </div>
+            
+            <div class="tab-content active" id="desktop-dev">
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        Tap on the <span class="icon cogwheel"></span> in the bottom left corner of the desktop app to open up your User Settings.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        Then head to <strong>Advanced</strong>.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        Now, tap on the main toggle next to <strong>Developer Mode</strong> to enable. 
+                    </div>
+                    <div class="step-content">
+                        <p>A <span class="checkmark">✓</span> means it's enabled, while an <span class="x-mark">✗</span> means it's disabled.</p>
+                        
+                        <div class="image-container">
+                            <img src="https://support.discord.com/hc/article_attachments/30911629526551" alt="Discord Desktop Developer Mode Settings">
+                            <div class="image-caption">Desktop: Open User Settings > Advanced and toggle on Developer Mode</div>
+                        </div>
                     </div>
                 </div>
             </div>
             
+            <div class="tab-content" id="mobile-dev">
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">1</span>
+                        Tap on your Avatar in the bottom-right corner.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">2</span>
+                        Next, tap on the <span class="icon cogwheel"></span> in the top-right corner.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">3</span>
+                        Now, scroll down until you see <strong>Advanced</strong> under App Settings.
+                    </div>
+                </div>
+                
+                <div class="step">
+                    <div class="step-title">
+                        <span class="step-number">4</span>
+                        Finally, tap on the toggle next to <strong>Developer Mode</strong>.
+                    </div>
+                    <div class="step-content">
+                        <p>A <span class="checkmark">✓</span> means it's enabled, while an <span class="x-mark">✗</span> means it's disabled.</p>
+                        
+                        <div class="image-container">
+                            <img src="https://support.discord.com/hc/article_attachments/30911616486423" alt="Discord Mobile Developer Mode Settings">
+                            <div class="image-caption">Mobile: Open Settings > Advanced and toggle on Developer Mode</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 id="desktop">Finding Channel ID on Desktop</h2>
+            
             <div class="step">
-                <span class="step-number">2</span>
-                <span class="step-title">Copy Channel ID</span>
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    Enable Developer Mode
+                </div>
+                <div class="step-content">
+                    <p>First, make sure Developer Mode is enabled following the steps above.</p>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    Copy Channel ID
+                </div>
                 <div class="step-content">
                     <p>Once Developer Mode is enabled:</p>
                     <ul>
                         <li>Navigate to the channel whose ID you want to find</li>
                         <li>Right-click on the channel name in the channel list</li>
-                        <li>Select <span class="code">Copy ID</span> from the context menu</li>
+                        <li>Select <strong>Copy ID</strong> from the context menu</li>
                     </ul>
-                    <div class="image-placeholder">
-                        [Screenshot: Right-click menu on a channel showing "Copy ID" option]
+                    
+                    <div class="image-container">
+                        <img src="https://support.discord.com/hc/article_attachments/30911616532119" alt="Copy Channel ID on Desktop">
+                        <div class="image-caption">Right-click on a channel and select "Copy ID"</div>
                     </div>
+                    
                     <div class="note">
-                        <strong>Note:</strong> The Channel ID is now copied to your clipboard and can be pasted anywhere you need it.
+                        <div class="note-title">Note</div>
+                        <p>The Channel ID is now copied to your clipboard and can be pasted anywhere you need it.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="card">
-            <h2><i>📱</i> Finding Channel ID on Mobile</h2>
+            
+            <h2 id="mobile">Finding Channel ID on Mobile</h2>
             
             <div class="step">
-                <span class="step-number">1</span>
-                <span class="step-title">Enable Developer Mode</span>
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    Enable Developer Mode
+                </div>
                 <div class="step-content">
-                    <p>First, enable Developer Mode in the Discord mobile app:</p>
-                    <ul>
-                        <li>Tap your profile picture in the bottom right</li>
-                        <li>Scroll down and tap <span class="code">Behavior</span> under App Settings</li>
-                        <li>Toggle on <span class="code">Developer Mode</span></li>
-                    </ul>
-                    <div class="image-placeholder">
-                        [Screenshot: Discord mobile settings showing Developer Mode toggle]
-                    </div>
+                    <p>First, make sure Developer Mode is enabled following the steps above.</p>
                 </div>
             </div>
             
             <div class="step">
-                <span class="step-number">2</span>
-                <span class="step-title">Copy Channel ID</span>
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    Copy Channel ID
+                </div>
                 <div class="step-content">
                     <p>Once Developer Mode is enabled:</p>
                     <ul>
                         <li>Navigate to the channel whose ID you want to find</li>
                         <li>Tap and hold on the channel name in the channel list</li>
-                        <li>Select <span class="code">Copy ID</span> from the menu that appears</li>
+                        <li>Select <strong>Copy ID</strong> from the menu that appears</li>
                     </ul>
-                    <div class="image-placeholder">
-                        [Screenshot: Long-press menu on a channel showing "Copy ID" option]
+                    
+                    <div class="image-container">
+                        <img src="https://support.discord.com/hc/article_attachments/30911629575447" alt="Copy Channel ID on Mobile">
+                        <div class="image-caption">Tap and hold on a channel and select "Copy ID"</div>
                     </div>
+                    
                     <div class="note">
-                        <strong>Note:</strong> The Channel ID is now copied to your clipboard and can be pasted anywhere you need it.
+                        <div class="note-title">Note</div>
+                        <p>The Channel ID is now copied to your clipboard and can be pasted anywhere you need it.</p>
                     </div>
                 </div>
             </div>
-        </div>
-        
-        <div class="card">
-            <h2><i>💡</i> What are Channel IDs used for?</h2>
-            <p>Channel IDs are unique identifiers for Discord channels. They're commonly used for:</p>
-            <ul>
-                <li>Bot development and automation</li>
-                <li>Creating channel mentions in messages</li>
-                <li>API integrations and webhooks</li>
-                <li>Troubleshooting and support requests</li>
-            </ul>
+            
             <div class="note">
-                <strong>Remember:</strong> Channel IDs are different from User IDs and Server IDs. Make sure you're copying the correct ID for your needs.
+                <div class="note-title">What are Channel IDs used for?</div>
+                <p>Channel IDs are unique identifiers for Discord channels. They're commonly used for bot development, API integrations, creating channel mentions in messages, and troubleshooting.</p>
             </div>
-        </div>
+        </main>
     </div>
     
     <footer>
-        <p>This guide is based on Discord's official documentation</p>
-        <p>Discord is a trademark of Discord Inc. This site is not officially affiliated with Discord.</p>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Articles</a>
+            <a href="#">Community</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+        <div class="copyright">
+            &copy; 2023 Discord Inc. All rights reserved.
+        </div>
     </footer>
+    
+    <script>
+        // Tab functionality
+        document.querySelectorAll('.tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                // Remove active class from all tabs and contents
+                document.querySelectorAll('.tab').forEach(t => t.classList.remove('active'));
+                document.querySelectorAll('.tab-content').forEach(c => c.classList.remove('active'));
+                
+                // Add active class to clicked tab and corresponding content
+                tab.classList.add('active');
+                const tabId = tab.getAttribute('data-tab');
+                document.getElementById(tabId).classList.add('active');
+            });
+        });
+    </script>
 </body>
 </html>
