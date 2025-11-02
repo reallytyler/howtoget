@@ -146,7 +146,7 @@
             font-weight: 600;
             margin-bottom: 1rem;
             display: flex;
-            align-items: center;
+            align-items: flex-start;
         }
         
         .step-number {
@@ -160,6 +160,8 @@
             border-radius: 50%;
             margin-right: 10px;
             font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
         }
         
         .step-content {
@@ -238,7 +240,7 @@
             display: inline-block;
             width: 20px;
             height: 20px;
-            margin-right: 5px;
+            margin: 0 5px;
             vertical-align: middle;
         }
         
@@ -267,6 +269,15 @@
         .x-mark {
             color: #ff5c5c;
             font-weight: bold;
+        }
+        
+        .step-text {
+            flex: 1;
+        }
+        
+        .bold-text {
+            font-weight: bold;
+            color: #333;
         }
         
         footer {
@@ -381,21 +392,27 @@
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">1</span>
-                        Tap on the  <img src="https://support.discord.com/hc/article_attachments/22015869446039" alt="Settings" class="icon"> in the bottom left corner of the desktop app to open up your User Settings.
+                        <div class="step-text">
+                            Tap on the <img src="https://support.discord.com/hc/article_attachments/22015869446039" alt="Settings" class="icon"> in the bottom left corner of the desktop app to open up your User Settings.
+                        </div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">2</span>
-                        Then head to <bold>Advanced</bold>.
+                        <div class="step-text">
+                            Then head to <span class="bold-text">Advanced</span>.
+                        </div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">3</span>
-                        Now, tap on the main toggle next to  <bold>Developer Mode</bold> to enable. 
+                        <div class="step-text">
+                            Now, tap on the main toggle next to <span class="bold-text">Developer Mode</span> to enable.
+                        </div>
                     </div>
                     <div class="step-content">
                         <p>A <span class="checkmark">✓</span> means it's enabled, while an <span class="x-mark">✗</span> means it's disabled.</p>
@@ -412,28 +429,36 @@
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">1</span>
-                        Tap on your Avatar in the bottom-right corner.
+                        <div class="step-text">
+                            Tap on your Avatar in the bottom-right corner.
+                        </div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">2</span>
-                        Next, tap on the <img src="https://support.discord.com/hc/article_attachments/22015869446039" alt="Settings" class="icon"> in the top-right corner.
+                        <div class="step-text">
+                            Next, tap on the <img src="https://support.discord.com/hc/article_attachments/22015869446039" alt="Settings" class="icon"> in the top-right corner.
+                        </div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">3</span>
-                        Now, scroll down until you see <strong>Advanced</strong> under App Settings.
+                        <div class="step-text">
+                            Now, scroll down until you see <span class="bold-text">Advanced</span> under App Settings.
+                        </div>
                     </div>
                 </div>
                 
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">4</span>
-                        Finally, tap on the toggle next to <strong>Developer Mode</strong>.
+                        <div class="step-text">
+                            Finally, tap on the toggle next to <span class="bold-text">Developer Mode</span>.
+                        </div>
                     </div>
                     <div class="step-content">
                         <p>A <span class="checkmark">✓</span> means it's enabled, while an <span class="x-mark">✗</span> means it's disabled.</p>
@@ -451,7 +476,9 @@
             <div class="step">
                 <div class="step-title">
                     <span class="step-number">1</span>
-                    Enable Developer Mode
+                    <div class="step-text">
+                        Enable Developer Mode
+                    </div>
                 </div>
                 <div class="step-content">
                     <p>First, make sure Developer Mode is enabled following the steps above.</p>
@@ -461,14 +488,16 @@
             <div class="step">
                 <div class="step-title">
                     <span class="step-number">2</span>
-                    Copy Channel ID
+                    <div class="step-text">
+                        Copy Channel ID
+                    </div>
                 </div>
                 <div class="step-content">
                     <p>Once Developer Mode is enabled:</p>
                     <ul>
                         <li>Navigate to the channel whose ID you want to find</li>
                         <li>Right-click on the channel name in the channel list</li>
-                        <li>Select <strong>Copy ID</strong> from the context menu</li>
+                        <li>Select <span class="bold-text">Copy ID</span> from the context menu</li>
                     </ul>
                     
                     <div class="image-container">
@@ -488,7 +517,9 @@
             <div class="step">
                 <div class="step-title">
                     <span class="step-number">1</span>
-                    Enable Developer Mode
+                    <div class="step-text">
+                        Enable Developer Mode
+                    </div>
                 </div>
                 <div class="step-content">
                     <p>First, make sure Developer Mode is enabled following the steps above.</p>
@@ -498,14 +529,16 @@
             <div class="step">
                 <div class="step-title">
                     <span class="step-number">2</span>
-                    Copy Channel ID
+                    <div class="step-text">
+                        Copy Channel ID
+                    </div>
                 </div>
                 <div class="step-content">
                     <p>Once Developer Mode is enabled:</p>
                     <ul>
                         <li>Navigate to the channel whose ID you want to find</li>
                         <li>Tap and hold on the channel name in the channel list</li>
-                        <li>Select <strong>Copy ID</strong> from the menu that appears</li>
+                        <li>Select <span class="bold-text">Copy ID</span> from the menu that appears</li>
                     </ul>
                     
                     <div class="image-container">
