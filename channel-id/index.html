@@ -3,8 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01J18JAH0XZ9WSX8W5QJAMN2FM">
-    <title>How to Find Your Channel ID | Discord</title>
+    <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01J18JAH0XZ9WSX8W5QJAMN2FM">
+    <title>How to Find Your Channel ID | HowToGet</title>
     <style>
         :root {
             --discord-blurple: #5865F2;
@@ -143,7 +143,7 @@
         
         .step-title {
             font-weight: 600;
-            margin-bottom: 0.5rem;
+            margin-bottom: 1rem;
             display: flex;
             align-items: center;
         }
@@ -175,6 +175,16 @@
             border: 1px solid var(--discord-border);
             border-radius: 8px;
             box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        /* Desktop images - larger */
+        .desktop-image {
+            max-width: 700px;
+        }
+        
+        /* Mobile images - smaller */
+        .mobile-image {
+            max-width: 350px;
         }
         
         .image-caption {
@@ -285,6 +295,9 @@
         .copyright {
             color: #999;
             font-size: 0.9rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
         }
         
         @media (max-width: 768px) {
@@ -308,17 +321,26 @@
                 margin-top: 1rem;
                 justify-content: center;
             }
+            
+            /* Make mobile images even smaller on mobile devices */
+            .mobile-image {
+                max-width: 280px;
+            }
+            
+            .desktop-image {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
 <body>
     <header>
-        <div class="logo">Discord Support</div>
+        <div class="logo">HowToGet</div>
         <nav>
             <ul>
                 <li><a href="#">Home</a></li>
-                <li><a href="#">Articles</a></li>
-                <li><a href="#">Community</a></li>
+                <li><a href="#">Guides</a></li>
+                <li><a href="#">Tools</a></li>
                 <li><a href="#">Contact</a></li>
             </ul>
         </nav>
@@ -333,7 +355,7 @@
                 <li><a href="#mobile">Finding Channel ID on Mobile</a></li>
             </ul>
             
-            <h3>Related articles</h3>
+            <h3>Related guides</h3>
             <ul>
                 <li><a href="#">Where can I find my User ID?</a></li>
                 <li><a href="#">Where can I find my Server ID?</a></li>
@@ -358,7 +380,7 @@
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">1</span>
-                        Tap on the <span class="icon cogwheel"></span> in the bottom left corner of the desktop app to open up your User Settings.
+                        Tap on the <img src="https://support.discord.com/hc/article_attachments/22015869446039" alt="Settings" class="icon"> in the bottom left corner of the desktop app to open up your User Settings.
                     </div>
                 </div>
                 
@@ -378,7 +400,7 @@
                         <p>A <span class="checkmark">✓</span> means it's enabled, while an <span class="x-mark">✗</span> means it's disabled.</p>
                         
                         <div class="image-container">
-                            <img src="https://support.discord.com/hc/article_attachments/30911629526551" alt="Discord Desktop Developer Mode Settings">
+                            <img src="https://support.discord.com/hc/article_attachments/30911629526551" alt="Discord Desktop Developer Mode Settings" class="desktop-image">
                             <div class="image-caption">Desktop: Open User Settings > Advanced and toggle on Developer Mode</div>
                         </div>
                     </div>
@@ -396,7 +418,7 @@
                 <div class="step">
                     <div class="step-title">
                         <span class="step-number">2</span>
-                        Next, tap on the <span class="icon cogwheel"></span> in the top-right corner.
+                        Next, tap on the <img src="https://support.discord.com/hc/article_attachments/22015869446039" alt="Settings" class="icon"> in the top-right corner.
                     </div>
                 </div>
                 
@@ -416,7 +438,7 @@
                         <p>A <span class="checkmark">✓</span> means it's enabled, while an <span class="x-mark">✗</span> means it's disabled.</p>
                         
                         <div class="image-container">
-                            <img src="https://support.discord.com/hc/article_attachments/30911616486423" alt="Discord Mobile Developer Mode Settings">
+                            <img src="https://support.discord.com/hc/article_attachments/30911616486423" alt="Discord Mobile Developer Mode Settings" class="mobile-image">
                             <div class="image-caption">Mobile: Open Settings > Advanced and toggle on Developer Mode</div>
                         </div>
                     </div>
@@ -449,7 +471,7 @@
                     </ul>
                     
                     <div class="image-container">
-                        <img src="https://support.discord.com/hc/article_attachments/30911616532119" alt="Copy Channel ID on Desktop">
+                        <img src="https://support.discord.com/hc/article_attachments/30911616532119" alt="Copy Channel ID on Desktop" class="desktop-image">
                         <div class="image-caption">Right-click on a channel and select "Copy ID"</div>
                     </div>
                     
@@ -486,7 +508,7 @@
                     </ul>
                     
                     <div class="image-container">
-                        <img src="https://support.discord.com/hc/article_attachments/30911629575447" alt="Copy Channel ID on Mobile">
+                        <img src="https://support.discord.com/hc/article_attachments/30911629575447" alt="Copy Channel ID on Mobile" class="mobile-image">
                         <div class="image-caption">Tap and hold on a channel and select "Copy ID"</div>
                     </div>
                     
@@ -507,15 +529,15 @@
     <footer>
         <div class="footer-links">
             <a href="#">Home</a>
-            <a href="#">Articles</a>
-            <a href="#">Community</a>
+            <a href="#">Guides</a>
+            <a href="#">Tools</a>
             <a href="#">Contact</a>
             <a href="#">Privacy</a>
             <a href="#">Terms</a>
         </div>
         <div class="copyright">
-            &copy; 2025 HowToget
-            HowToGet is not affiliated, associated, authorized, endorsed by, or in anywayofficially connected with Discord Inc., or any of its subsidiaries or its affiliates.
+            &copy; 2025 HowToGet<br>
+            HowToGet is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Discord Inc., or any of its subsidiaries or its affiliates.
         </div>
     </footer>
     
