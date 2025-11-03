@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01J18JAH0XZ9WSX8W5QJAMN2FM">
     <link href="https://fonts.cdnfonts.com/css/gg-sans-2" rel="stylesheet">
-    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
     <title>How to Get Discord Bot Token | HowToGet</title>
     <style>
         :root {
@@ -221,6 +221,19 @@
             border-radius: 4px;
             padding: 1rem;
             margin: 1rem 0;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .warning-icon {
+            color: #ffc107;
+            font-size: 1.5rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .warning-content {
+            flex: 1;
         }
         
         .warning-title {
@@ -285,6 +298,16 @@
             
             .desktop-image {
                 max-width: 100%;
+            }
+            
+            .warning {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            .warning-icon {
+                margin-right: 0;
+                margin-bottom: 0.5rem;
             }
         }
     </style>
@@ -406,13 +429,11 @@
                 <div class="step-title">
                     <span class="step-number">5</span>
                     <div class="step-text">
-                        Click "Reset Token" or "Copy" to get your bot token
+                        On the Bot page under Token, click "Reset Token" to generate a new bot token
                     </div>
                 </div>
                 <div class="step-content">
-                    <p> On the Bot page under Token, click "Reset Token" to generate a new bot token.</p>
-<i class="bx bxs-alert-triangle "/>
-    <h3>You won't be able to view your token again unless you regenerate it, so make sure to keep it somewhere safe (like in a password manager)</h3>
+                    <p>In the Bot section, click "Reset Token" to generate your bot token.</p>
                     
                     <div class="image-container">
                         <img src="https://i.imgur.com/2wzgHpK.png" alt="Reset Token" class="desktop-image">
@@ -420,8 +441,13 @@
                     </div>
                     
                     <div class="warning">
-                        <div class="warning-title">Important</div>
-                        <p>You may be asked to verify your identity with 2FA or password when resetting the token.</p>
+                        <div class="warning-icon">
+                            <i class='bx bxs-alert-triangle'></i>
+                        </div>
+                        <div class="warning-content">
+                            <div class="warning-title">Important Security Notice</div>
+                            <p>You won't be able to view your token again unless you regenerate it, so make sure to keep it somewhere safe (like in a password manager).</p>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -435,6 +461,16 @@
                 </div>
                 <div class="step-content">
                     <p>After verification, your bot token will be displayed. Click "Copy" to copy it to your clipboard.</p>
+                    
+                    <div class="warning">
+                        <div class="warning-icon">
+                            <i class='bx bxs-shield-alt'></i>
+                        </div>
+                        <div class="warning-content">
+                            <div class="warning-title">Security Reminder</div>
+                            <p>You may be asked to verify your identity with 2FA or password when resetting the token.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
             
