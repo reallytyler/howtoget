@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/x-icon" href="/hc/theming_assets/01J18JAH0XZ9WSX8W5QJAMN2FM">
+    <link href="https://fonts.cdnfonts.com/css/gg-sans-2" rel="stylesheet">
+    <title>How to Get Discord Bot Token | HowToGet</title>
+    <style>
+        :root {
+            --discord-blurple: #5865F2;
+            --discord-green: #57F287;
+            --discord-dark: #2C2F33;
+            --discord-darker: #23272A;
+            --discord-light: #FFFFFF;
+            --discord-gray: #99AAB5;
+            --discord-light-gray: #f9f9f9;
+            --discord-border: #e0e0e0;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'gg sans Normal', sans-serif;
+        }
+        
+        body {
+            background-color: var(--discord-light);
+            color: #333;
+            line-height: 1.6;
+        }
+        
+        header {
+            background-color: var(--discord-light);
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid var(--discord-border);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--discord-blurple);
+        }
+        
+        nav ul {
+            display: flex;
+            list-style: none;
+        }
+        
+        nav li {
+            margin-left: 1.5rem;
+        }
+        
+        nav a {
+            text-decoration: none;
+            color: #333;
+            font-weight: 500;
+        }
+        
+        nav a:hover {
+            color: var(--discord-blurple);
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 2rem;
+            display: flex;
+        }
+        
+        .sidebar {
+            width: 250px;
+            margin-right: 2rem;
+        }
+        
+        .sidebar h3 {
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+            color: #555;
+        }
+        
+        .sidebar ul {
+            list-style: none;
+        }
+        
+        .sidebar li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .sidebar a {
+            text-decoration: none;
+            color: #333;
+            display: block;
+            padding: 0.5rem 0;
+        }
+        
+        .sidebar a:hover {
+            color: var(--discord-blurple);
+        }
+        
+        .main-content {
+            flex: 1;
+            max-width: 800px;
+        }
+        
+        h1 {
+            color: #333;
+            margin-bottom: 1.5rem;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        h2 {
+            color: #333;
+            margin: 2rem 0 1rem;
+            font-size: 1.5rem;
+            font-weight: 600;
+            padding-bottom: 0.5rem;
+            border-bottom: 1px solid var(--discord-border);
+        }
+        
+        h3 {
+            color: #333;
+            margin: 1.5rem 0 1rem;
+            font-size: 1.2rem;
+            font-weight: 600;
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .step {
+            margin-bottom: 2rem;
+            padding: 1.5rem;
+            background-color: var(--discord-light-gray);
+            border-radius: 8px;
+            border-left: 4px solid var(--discord-blurple);
+        }
+        
+        .step-title {
+            font-weight: 600;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .step-number {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background-color: var(--discord-blurple);
+            color: white;
+            border-radius: 50%;
+            margin-right: 10px;
+            font-size: 0.9rem;
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+        
+        .step-content {
+            margin-left: 34px;
+        }
+        
+        .image-container {
+            margin: 1rem 0;
+            text-align: center;
+        }
+        
+        .image-container img {
+            max-width: 100%;
+            border: 1px solid var(--discord-border);
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+        }
+        
+        .desktop-image {
+            max-width: 700px;
+        }
+        
+        .image-caption {
+            font-size: 0.9rem;
+            color: #666;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+        
+        .note {
+            background-color: rgba(88, 101, 242, 0.05);
+            border: 1px solid rgba(88, 101, 242, 0.2);
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .note-title {
+            font-weight: 600;
+            color: var(--discord-blurple);
+            margin-bottom: 0.5rem;
+        }
+        
+        .step-text {
+            flex: 1;
+        }
+        
+        .bold-text {
+            font-weight: bold;
+            color: #333;
+        }
+        
+        .warning {
+            background-color: rgba(255, 193, 7, 0.1);
+            border: 1px solid rgba(255, 193, 7, 0.3);
+            border-radius: 4px;
+            padding: 1rem;
+            margin: 1rem 0;
+        }
+        
+        .warning-title {
+            font-weight: 600;
+            color: #ffc107;
+            margin-bottom: 0.5rem;
+        }
+        
+        footer {
+            background-color: var(--discord-light-gray);
+            padding: 2rem;
+            text-align: center;
+            border-top: 1px solid var(--discord-border);
+            margin-top: 3rem;
+        }
+        
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-links a {
+            margin: 0 1rem;
+            text-decoration: none;
+            color: #666;
+        }
+        
+        .footer-links a:hover {
+            color: var(--discord-blurple);
+        }
+        
+        .copyright {
+            color: #999;
+            font-size: 0.9rem;
+            max-width: 800px;
+            margin: 0 auto;
+            line-height: 1.5;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            
+            .sidebar {
+                width: 100%;
+                margin-right: 0;
+                margin-bottom: 2rem;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+            }
+            
+            nav ul {
+                margin-top: 1rem;
+                justify-content: center;
+            }
+            
+            .desktop-image {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">HowToGet</div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#">Guides</a></li>
+                <li><a href="#">Tools</a></li>
+                <li><a href="#">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="container">
+        <aside class="sidebar">
+            <h3>In this article</h3>
+            <ul>
+                <li><a href="#go-to-dev-portal">Go to Discord Developer Portal</a></li>
+                <li><a href="#create-application">Create Your Application</a></li>
+                <li><a href="#bot-section">Navigate to Bot Section</a></li>
+                <li><a href="#get-token">Get Your Bot Token</a></li>
+            </ul>
+            
+            <h3>Related guides</h3>
+            <ul>
+                <li><a href="dev-mode.html">Enable Developer Mode</a></li>
+                <li><a href="user-id.html">Find User ID</a></li>
+                <li><a href="channel-id.html">Find Channel ID</a></li>
+                <li><a href="#">Invite Bot to Server</a></li>
+            </ul>
+        </aside>
+        
+        <main class="main-content">
+            <h1>How to Get Discord Bot Token</h1>
+            
+            <p>This guide will show you how to create a Discord application and get your bot token from the Discord Developer Portal.</p>
+            
+            <h2 id="go-to-dev-portal">Go to Discord Developer Portal</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">1</span>
+                    <div class="step-text">
+                        Visit the <a href="https://discord.com/developers/applications" target="_blank">Discord Developer Portal</a>
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Open the Discord Developer Portal in your browser and log in with your Discord account.</p>
+                    
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/v6suzub.png" alt="Discord Developer Portal" class="desktop-image">
+                        <div class="image-caption">Discord Developer Portal homepage</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 id="create-application">Create Your Application</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">2</span>
+                    <div class="step-text">
+                        Click "New Application" or select an existing one
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Click the "New Application" button to create a new Discord application for your bot.</p>
+                    
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/JZanVCz.png" alt="Create Application Dialog" class="desktop-image">
+                        <div class="image-caption">Create Application dialog with name field and ToS agreement</div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">3</span>
+                    <div class="step-text">
+                        Enter application name and agree to terms
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>Give your application a name, check the agreement boxes, and click "Create".</p>
+                    
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/Tl2I4Xq.png" alt="Application Created" class="desktop-image">
+                        <div class="image-caption">Application created with name entered and agreements checked</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 id="bot-section">Navigate to Bot Section</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">4</span>
+                    <div class="step-text">
+                        Click on "Bot" in the left sidebar
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>In your application settings, navigate to the "Bot" section in the left sidebar.</p>
+                    
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/MhSCRMq.png" alt="Bot Section" class="desktop-image">
+                        <div class="image-caption">Bot section in the left sidebar</div>
+                    </div>
+                </div>
+            </div>
+            
+            <h2 id="get-token">Get Your Bot Token</h2>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">5</span>
+                    <div class="step-text">
+                        Click "Reset Token" or "Copy" to get your bot token
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>In the Bot section, click "Reset Token" (if it's your first time) or "Copy" to get your bot token.</p>
+                    
+                    <div class="image-container">
+                        <img src="https://i.imgur.com/2wzgHpK.png" alt="Reset Token" class="desktop-image">
+                        <div class="image-caption">Reset Token button in the Bot section</div>
+                    </div>
+                    
+                    <div class="warning">
+                        <div class="warning-title">Important</div>
+                        <p>You may be asked to verify your identity with 2FA or password when resetting the token.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="step">
+                <div class="step-title">
+                    <span class="step-number">6</span>
+                    <div class="step-text">
+                        Copy your bot token
+                    </div>
+                </div>
+                <div class="step-content">
+                    <p>After verification, your bot token will be displayed. Click "Copy" to copy it to your clipboard.</p>
+                </div>
+            </div>
+            
+            <div class="note">
+                <div class="note-title">Next Steps</div>
+                <p>Now that you have your bot token, you can:</p>
+                <ul>
+                    <li>Use it in your bot code to connect to Discord</li>
+                    <li>Set up bot permissions and intents</li>
+                    <li>Invite your bot to servers</li>
+                    <li>Start developing your bot's functionality</li>
+                </ul>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <div class="footer-links">
+            <a href="#">Home</a>
+            <a href="#">Guides</a>
+            <a href="#">Tools</a>
+            <a href="#">Contact</a>
+            <a href="#">Privacy</a>
+            <a href="#">Terms</a>
+        </div>
+        <div class="copyright">
+            &copy; 2025 HowToGet<br>
+            HowToGet is not affiliated, associated, authorized, endorsed by, or in any way officially connected with Discord Inc., or any of its subsidiaries or its affiliates.
+        </div>
+    </footer>
+</body>
+</html>
